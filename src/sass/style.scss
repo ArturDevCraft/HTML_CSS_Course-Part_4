@@ -7,12 +7,15 @@
 
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 77px;
 }
 
 body {
 	background-color: colors.$secondary-color;
 	font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden;
+	padding-top: 77px;
 }
 
 .wrapper {
@@ -23,18 +26,24 @@ body {
 
 // HEADER
 .nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 1em;
-
+	background-color: colors.$secondary-color;
+	transition: height 0.3;
+	font-size: 2.1rem;
 	&__logo {
 		display: flex;
 		justify-content: stretch;
 		align-items: center;
-
+		transition: font-size 0.3s;
 		p {
-			font-size: 3rem;
 			color: colors.$main-color;
 			font-weight: 500;
 		}
@@ -42,7 +51,7 @@ body {
 
 	&__menu {
 		display: block;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		right: -300px;
 		z-index: 100;
@@ -51,6 +60,8 @@ body {
 		justify-content: end;
 		transition: right 0.8s;
 		background-color: colors.$main-color;
+		box-shadow: 0 0 10px #000;
+
 		li {
 			list-style-type: none;
 			font-size: 0;
@@ -58,7 +69,7 @@ body {
 
 		a {
 			display: block;
-			padding: 1.3em 1.3em;
+			padding: 1.3em 3.3em 1.3em 2.3em;
 			font-size: 2rem;
 			text-decoration: none;
 			text-wrap: nowrap;
@@ -74,6 +85,22 @@ body {
 	&__mobile-menu {
 		right: 0;
 	}
+
+	&:hover {
+		font-size: 2.8rem;
+		.burger-btn {
+			&__box {
+				width: 60px;
+			}
+
+			&__bars {
+				margin-bottom: 0.8em;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
 }
 
 .burger-btn {
@@ -83,18 +110,20 @@ body {
 	cursor: pointer;
 
 	&__box {
-		width: 60px;
+		width: 53px;
 		position: relative;
 		padding: 1em;
-		border: 1px solid colors.$main-color;
+		border: 1px solid colors.$soft-shadow;
 		border-radius: 8px;
+		transition: width 0.3s;
 	}
 	&__bars {
 		height: 3px;
 		width: 100%;
 		display: block;
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
 		background-color: colors.$main-color;
+		transition: margin-bottom 0.3s;
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -185,6 +214,7 @@ body {
 		grid-template-columns: 1fr 2fr;
 		grid-template-rows: 1fr;
 		padding: 0 1em;
+		font-size: 3rem;
 
 		&__logo {
 			display: flex;
@@ -192,7 +222,6 @@ body {
 			align-items: center;
 
 			p {
-				font-size: 3rem;
 				color: colors.$main-color;
 				font-weight: 500;
 				text-wrap: nowrap;
@@ -208,6 +237,7 @@ body {
 			transform: translateX(0);
 			height: auto;
 			background-color: colors.$secondary-color;
+			box-shadow: none;
 			a {
 				padding: 1.3em 1.3em;
 				font-size: 2rem;
@@ -216,6 +246,22 @@ body {
 				&:hover {
 					background-color: colors.$main-color;
 					color: colors.$secondary-color;
+				}
+			}
+		}
+
+		&:hover {
+			font-size: 3rem;
+			.burger-btn {
+				&__box {
+					width: 60px;
+				}
+
+				&__bars {
+					margin-bottom: 0.8em;
+					&:last-child {
+						margin-bottom: 0;
+					}
 				}
 			}
 		}
