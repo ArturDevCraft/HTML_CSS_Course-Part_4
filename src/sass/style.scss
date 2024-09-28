@@ -1,0 +1,145 @@
+@use './colors' as colors;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: colors.$secondary-color;
+	font-family: 'Montserrat', sans-serif;
+	overflow: hidden;
+}
+
+.wrapper {
+	width: clamp(300px, 100%, 1200px);
+	margin: 0 auto;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1em;
+
+	&__logo {
+		display: flex;
+		justify-content: stretch;
+		align-items: center;
+
+		p {
+			font-size: 3rem;
+			color: colors.$main-color;
+			font-weight: 500;
+		}
+	}
+
+	&__menu {
+		font-size: 0;
+		display: block;
+		position: absolute;
+		top: 0;
+		height: 100vh;
+		right: -300px;
+		justify-content: end;
+		transition: right 0.8s;
+
+		li {
+			list-style-type: none;
+			font-size: 0;
+		}
+
+		a {
+			display: block;
+			padding: 1.3em 1.3em;
+			font-size: 2rem;
+			text-decoration: none;
+			text-wrap: nowrap;
+			color: colors.$secondary-color;
+			background-color: colors.$main-color;
+			&:hover {
+				background-color: colors.$secondary-color;
+				color: colors.$main-color;
+			}
+		}
+	}
+
+	&__mobile-menu {
+		right: 0;
+	}
+}
+
+.burger-btn {
+	background-color: colors.$secondary-color;
+	border: none;
+	padding: 1em;
+	cursor: pointer;
+
+	&__box {
+		width: 60px;
+		position: relative;
+		padding: 1em;
+		border: 1px solid colors.$main-color;
+		border-radius: 8px;
+	}
+	&__bars {
+		height: 3px;
+		width: 100%;
+		display: block;
+		margin-bottom: 1em;
+		background-color: colors.$main-color;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@media (576px <=width) {
+	.nav {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: 1fr;
+		padding: 0 1em;
+
+		&__logo {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+
+			p {
+				font-size: 3rem;
+				color: colors.$main-color;
+				font-weight: 500;
+				text-wrap: nowrap;
+			}
+		}
+
+		&__menu {
+			display: flex;
+			position: unset;
+			top: 0;
+			right: 0;
+			justify-content: end;
+			transform: translateX(0);
+			height: auto;
+			a {
+				padding: 1.3em 1.3em;
+				font-size: 2rem;
+				background-color: colors.$secondary-color;
+				color: colors.$main-color;
+				&:hover {
+					background-color: colors.$main-color;
+					color: colors.$secondary-color;
+				}
+			}
+		}
+	}
+
+	.burger-btn {
+		display: none;
+	}
+}
