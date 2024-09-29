@@ -21,7 +21,7 @@ body {
 .wrapper {
 	width: clamp(300px, 100%, 1200px);
 	margin: 0 auto;
-	padding: 0 2em;
+	padding: 0 2rem;
 }
 
 // HEADER
@@ -29,15 +29,17 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
+	right: 0;
 	z-index: 100;
 	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 1em;
 	background-color: colors.$secondary-color;
 	transition: height 0.3;
 	font-size: 2.1rem;
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 	&__logo {
 		display: flex;
 		justify-content: stretch;
@@ -106,7 +108,7 @@ body {
 .burger-btn {
 	background-color: colors.$secondary-color;
 	border: none;
-	padding: 1em;
+	padding: 1em 0 1em 1em;
 	cursor: pointer;
 
 	&__box {
@@ -168,15 +170,17 @@ body {
 }
 
 // MAIN
-
-.aboutus-section {
+.section {
 	padding-top: 3em;
+	padding-bottom: 3em;
 	h2 {
 		font-size: 3.2rem;
 		font-weight: 200;
 		text-align: center;
+		text-transform: uppercase;
 	}
-
+}
+.aboutus {
 	&__content {
 		display: block;
 
@@ -239,14 +243,19 @@ body {
 	}
 }
 
+.offers {
+	&__subtitle {
+		margin-top: 1em;
+		font-size: 1.8rem;
+		text-align: center;
+		font-weight: 200;
+	}
+}
+
 // Media
 
 @media (576px <=width) {
 	.nav {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		grid-template-rows: 1fr;
-		padding: 0 1em;
 		font-size: 3rem;
 
 		&__logo {
@@ -304,7 +313,7 @@ body {
 		display: none;
 	}
 
-	.aboutus-section {
+	.aboutus {
 		&__content {
 			font-size: 1.6rem;
 			.right-column {
@@ -338,7 +347,7 @@ body {
 		}
 	}
 
-	.aboutus-section {
+	.aboutus {
 		&__content {
 			display: flex;
 			flex-direction: row;
