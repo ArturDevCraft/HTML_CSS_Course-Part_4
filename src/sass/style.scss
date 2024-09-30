@@ -12,10 +12,14 @@ html {
 }
 
 body {
-	background-color: colors.$secondary-color;
-	font-family: 'Montserrat', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	overflow-x: hidden;
 	padding-top: 77px;
+	background-color: colors.$secondary-color;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
