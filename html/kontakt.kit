@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4704e1b632.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./dist/css/style.min.css">
+</head>
+
+<body id="kontakt">
+    <!-- @include 'nav.kit' -->
+    <!-- @include 'header.kit' -->
+    <main>
+        <section class="contact">
+            <div class="wrapper">
+                <div class="contact__map">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d19504.129250965507!2d20.559758!3d52.333853000000005!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1727723710871!5m2!1spl!2spl"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <form class="contact__form" action="#">
+                    <label for="name">Imię i nazwisko</label>
+                    <input id="name" type="text">
+
+                    <label for="email">Adres e-mail:</label>
+                    <input type="email" id="email">
+
+                    <label for="message">Wiadomość:</label>
+                    <textarea id="message"></textarea>
+
+                    <button type="submit">Wyślij</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- @include 'footer.kit' -->
+    <script src="./dist/js/main.min.js"></script>
+</body>
+
+</html>

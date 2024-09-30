@@ -49,6 +49,11 @@ body {
 			color: colors.$main-color;
 			font-weight: 500;
 		}
+
+		a {
+			text-decoration: none;
+			color: colors.$main-color;
+		}
 	}
 
 	&__menu {
@@ -352,6 +357,118 @@ body {
 	}
 }
 
+// FOOTER
+.footer {
+	width: 100%;
+	padding-top: 3em;
+	background-color: colors.$light-grey;
+	color: colors.$main-color;
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		font-size: 2.5rem;
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: start;
+		align-items: start;
+		ul {
+			font-size: 1.4rem;
+			li {
+				list-style-type: none;
+				padding-bottom: 0.9em;
+				a {
+					text-decoration: none;
+					color: colors.$main-color;
+					&:hover {
+						color: colors.$soft-shadow;
+					}
+				}
+			}
+		}
+		> ul {
+			padding: 0 1.8em;
+			> li:first-child {
+				font-weight: 700;
+				padding-bottom: 1em;
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	&__copyright {
+		border-top: 1px solid colors.$soft-shadow;
+		padding: 1.5em 0;
+		text-align: center;
+		font-size: 1.2rem;
+	}
+}
+
+//contact
+.contact {
+	padding: 7em 0;
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&__map {
+		width: 100%;
+		iframe {
+			width: 100%;
+			height: 220px;
+			border-radius: 8px;
+		}
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		label {
+			font-size: 1.6rem;
+			margin: 1.5em 0 0.4em 0.4em;
+			color: colors.$main-color;
+		}
+
+		input,
+		textarea {
+			border: none;
+			padding: 1em 2em;
+			border-radius: 8px;
+			background-color: colors.$light-grey;
+			color: colors.$main-color;
+			&:focus {
+				outline: 2px solid colors.$call-to-action;
+			}
+		}
+
+		textarea {
+			resize: vertical;
+			height: 200px;
+		}
+
+		button[type='submit'] {
+			margin-top: 2em;
+			padding: 1em 2em;
+			border-radius: 8px;
+			border: none;
+			background-color: colors.$call-to-action;
+			font-size: 1.8rem;
+			font-weight: 600;
+			cursor: pointer;
+
+			&:hover {
+				background-color: colors.$main-color;
+				color: colors.$secondary-color;
+			}
+		}
+	}
+}
+
 // Media
 
 @media (576px <=width) {
@@ -485,6 +602,43 @@ body {
 			font-size: 2.5rem;
 		}
 	}
+
+	.footer {
+		padding-top: 5em;
+		&__logo {
+			font-size: 3.5rem;
+		}
+
+		&__nav {
+			ul {
+				font-size: 1.5rem;
+			}
+			> ul {
+				> li:first-child {
+					font-size: 1.7rem;
+				}
+			}
+		}
+	}
+
+	.contact {
+		.wrapper {
+			flex-direction: row;
+		}
+		&__map {
+			width: 48%;
+			iframe {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		&__form {
+			width: 48%;
+			label:first-child {
+				margin-top: 0;
+			}
+		}
+	}
 }
 
 @media (992px <= width) {
@@ -511,6 +665,23 @@ body {
 		&__cards {
 			&__button-all-offers {
 				font-size: 2.8rem;
+			}
+		}
+	}
+
+	.footer {
+		&__logo {
+			font-size: 4rem;
+		}
+
+		&__nav {
+			ul {
+				font-size: 1.5rem;
+			}
+			> ul {
+				> li:first-child {
+					font-size: 1.7rem;
+				}
 			}
 		}
 	}
