@@ -7,6 +7,4 @@ Used technologies: **HTML, CSS, JavaScript GULP**.
 
 Link to deployed verssion of project:
 
-- [Project managment app - preview](https://react-course-project-6.vercel.app/)
-
 [Preview](https://arturdevcraft.github.io/HTML_CSS_Course-Part_4/)
